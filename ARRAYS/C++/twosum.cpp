@@ -1,0 +1,53 @@
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+
+using namespace std;
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+
+        unordered_map<int, int> mp;
+
+        for (int i = 0; i < nums.size(); i++) {
+            int complement = target - nums[i];
+
+            if (mp.find(complement) != mp.end()) {
+                return {mp[complement], i};
+            }
+
+            mp[nums[i]] = i;
+        }
+
+        return {};
+    }
+};
+
+int main() {
+
+    Solution obj;
+
+    int n, target;
+
+    cout << "Enter number of elements: ";
+    cin >> n;
+
+    vector<int> nums(n);
+
+    cout << "Enter array elements: ";
+    for (int i = 0; i < n; i++)
+        cin >> nums[i];
+
+    cout << "Enter target: ";
+    cin >> target;
+
+    vector<int> ans = obj.twoSum(nums, target);
+
+    if (ans.empty())
+        cout << "No pair found.";
+    else
+        cout << "Indices: " << ans[0] << " " << ans[1];
+
+    return 0;
+}
