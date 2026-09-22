@@ -1,0 +1,12 @@
+# C++ compiled executables
+*.exe
+*.out
+*.o
+*.obj
+
+# VS Code settings
+.vscode/
+
+# Windows system files
+Thumbs.db
+Desktop.ini
