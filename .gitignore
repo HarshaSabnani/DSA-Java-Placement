@@ -4,6 +4,9 @@
 *.o
 *.obj
 
+# Java compiled files
+*.class
+
 # VS Code settings
 .vscode/
 
